@@ -30,3 +30,13 @@ PS:
 In Android, no user process is allowed to access /lib or /lib64, also chroot is denied.
 So If using Termux, we need to run under proot to pretend access to such directories.
 See https://github.com/termux/proot-distro on how to install proot and a minimal distro.
+
+
+ABOUT INLINING
+--------------
+When asm_symbolic naming in %[] is not used, zero-based %n is used.
+For the zero-based, input position starts right after the last ouput position.
+my __arm__ and __aarch64__ option in  revbit64 illustrates the zero-based.
+while my __x86_64__ option illustrates the asm_symbolic naming.
+Other architectures use the C implementation for revbit64.
+ 
