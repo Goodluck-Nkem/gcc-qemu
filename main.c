@@ -35,7 +35,8 @@ int main(int argc, char* argv[])
 	out = revbit64(in);
 	printf("revbit64 of " FMT_HEX_64 " is " FMT_HEX_64 "\n", in, out);
 
-	operation(5, 15);
+	out = operation(0xFFull << 16, 0xFFull << 32);
+	printf("Result of operation is " FMT_HEX_64 "\n", out);
 
 	epilogue();
 

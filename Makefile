@@ -7,7 +7,8 @@ all: amd64 x86 arm aarch64 mips mips64 riscv64
 
 amd64: x86_64
 x86_64: 
-	x86_64-linux-gnu-gcc-13 -Og -g main.c -o amd64.prog
+	x86_64-linux-gnu-as -g -c op_x86_64.s -o obj-asm.o
+	x86_64-linux-gnu-gcc-13 -Og -g main.c obj-asm.o -o amd64.prog
 
 i686: i386
 i386: x86

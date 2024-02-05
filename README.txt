@@ -1,3 +1,5 @@
+ABOUT QEMU-USER
+---------------
 To run another architecture, we need to install qemu-user.
 If we want to debug then we also need to install gdb-multiarch.
 
@@ -34,9 +36,14 @@ See https://github.com/termux/proot-distro on how to install proot and a minimal
 
 ABOUT INLINING
 --------------
-When asm_symbolic naming in %[] is not used, zero-based %n is used.
-For the zero-based, input position starts right after the last ouput position.
-my __arm__ and __aarch64__ option in  revbit64 illustrates the zero-based.
-while my __x86_64__ option illustrates the asm_symbolic naming.
+I tested assembly inlining in the revbit64 function.
+See gcc online manual for complete help, I'll explain just a little of operand naming.
+There are 2 ways to specify inline assembly operands.
+	- assembly symbolic naming.
+	- zero based position naming.
+For symbolic naming, choose any valid variable name, enclosed in [] .
+For zero-based, output starts from 0, input starts after the last output position.
+my __arm__ and __aarch64__ option in revbit64 illustrates the zero-based method.
+while my __x86_64__ option illustrates the symbolic naming method.
 Other architectures use the C implementation for revbit64.
  
